@@ -42,7 +42,7 @@ Real try-on reels play in the hero, a scroll-scrubbed video lets visitors "twirl
 
 ## Live Site
 
-**https://dresses-for-her.vercel.app**
+**https://wardrobebyshe.route34solutions.com**
 
 Hosted on Vercel. Every push to `main` deploys to production automatically; pushes to other branches get their own preview URL.
 
