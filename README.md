@@ -160,3 +160,17 @@ Vercel picks up the push and deploys it within a minute. `vercel.json` sets cach
 - **Changes don't show after deploying** — bump the `?v=` number for the edited CSS/JS file in `index.html`, then hard-refresh with `Ctrl + F5`.
 - **The twirl video doesn't move on iPhone** — tap the page once; iOS only allows video scrubbing after a user gesture.
 - **Animations feel off on a low-power device** — the site switches to a static version automatically when the device has *Reduce motion* turned on.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+In case of any queries, please leave a message or contact me via the email provided in my profile.
+
+<p align="center">
+⭐ <strong>Star this repository if you found it helpful!</strong>
+</p>
