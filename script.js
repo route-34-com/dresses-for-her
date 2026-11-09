@@ -1,6 +1,6 @@
 const LOOKS = ["maroon", "manjal", "cottoncandy", "rasagulla", "vaanam", "lavender", "comfy", "organza", "vintage",
   "hakoba", "silkmaxi", "oviyam", "banarasi", "chennur"];
-const FEEL = ["maroon", "manjal", "rasagulla", "cottoncandy", "vaanam", "lavender", "comfy", "vintage", "silkmaxi"];
+const FEEL = ["maroon", "rasagulla", "cottoncandy", "lavender", "comfy", "vintage", "silkmaxi", "summer", "banarasi"];
 const WALL_REELS = ["floralmaxi", "organza", "rasagulla", "banarasi", "cottoncandy", "hakoba"];
 const DROP = ["maroon", "rasagulla", "vaanam", "lavender", "organza", "comfy", "vintage", "jamdani", "hakoba", "summer", "linen", "silkmaxi"].map(byId);
 
@@ -47,7 +47,7 @@ const lookWheel = new PaintedWheel($("#lookCarousel"), LOOKS.map((id) => ({ id, 
 const feelRow = $("#feelRow");
 feelRow.innerHTML = FEEL.map((id, i) => `
   <button class="feel__panel${i ? "" : " is-open"}" type="button" data-id="${id}" aria-expanded="${!i}" aria-label="${byIdName(id)}">
-    <img src="${IMG}feel/${id}.jpg" alt="" draggable="false" loading="lazy" />
+    <img src="${IMG}feel/${id}.jpg?v=3" alt="" draggable="false" loading="lazy" />
     <span class="feel__label">${byIdName(id)}<small>View the set</small></span>
   </button>`).join("");
 const feelOpen = (panel) => $$(".feel__panel", feelRow).forEach((p) => {
