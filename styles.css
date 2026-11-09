@@ -550,3 +550,26 @@ html { scroll-behavior: auto; }
 ::-webkit-scrollbar-thumb:hover { background: var(--sb-thumb-hover); background-clip: padding-box; }
 ::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+:root { --sec: clamp(72px, 7vw, 104px); }
+p, li, dd { text-wrap: pretty; }
+h1, h2, h3, .title { text-wrap: balance; }
+.shop { padding: var(--sec) var(--gutter) calc(var(--sec) * .8); }
+.feel { padding: var(--sec) var(--gutter) calc(var(--sec) * .8); }
+.studio__grid { padding: var(--sec) var(--gutter) calc(var(--sec) * .7); }
+.insta { padding: var(--sec) 0 32px; }
+.info { padding: var(--sec) var(--gutter) 24px; }
+.shop__head { margin-bottom: 2.4rem; }
+.feel__head, .lookbook__head, .insta__head { margin-bottom: 1.8rem; }
+
+.page-col { padding-top: 112px; }
+.col { padding-bottom: 96px; }
+.col__head { max-width: none; margin-bottom: 1.6rem; }
+.col__head .eyebrow { margin-bottom: .7rem; }
+.col__head .title { font-size: clamp(2.6rem, 5.5vw, 4.6rem); }
+.col__line { max-width: 62rem; margin-top: .8rem; font-size: 1rem; }
+.col__tabs button { padding: .7rem 0; }
+.col__bar { margin: 1.1rem 0 1.8rem; }
+.col__pill { padding: .5rem 1rem; }
+@media (max-width: 600px) { .page-col { padding-top: 84px; } }
+@media (max-width: 600px) { .col__pills { flex-wrap: nowrap; overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; } .col__pills::-webkit-scrollbar { display: none; } .col__pill { flex: none; } .col__bar { gap: .7rem; } }

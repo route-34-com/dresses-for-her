@@ -1,5 +1,5 @@
 const CAT_COPY = {
-  all: ["The <em>wardrobe</em>", "Every piece from our Instagram in one place. Save the ones you love and ask us about them in DM."],
+  all: ["The <em>wardrobe</em>", "Every piece from our Instagram. Save the ones you love and ask us about them in DM."],
   kurthi: ["Kurthi <em>sets</em>", "Kurta, bottom and dupatta — in cotton, Jamdani, Kota Doria, Banarasi and silk."],
   maxi: ["The <em>maxis</em>", "Flowing maxis and Anarkalis in pure cotton and silk."],
   coord: ["Co-ord <em>sets</em>", "Matching tops and bottoms — wear them together or style them apart."],
