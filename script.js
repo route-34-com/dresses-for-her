@@ -377,6 +377,12 @@ const io = new IntersectionObserver((entries) => entries.forEach((e) => {
 $$("video[autoplay]").forEach((v) => io.observe(v));
 
 const nav = $("#nav");
+const navLinks = $$('.nav__links a[href^="#"]');
+const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (!e.isIntersecting) return;
+  navLinks.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+navLinks.forEach((a) => { const s = $(a.getAttribute("href")); if (s) spy.observe(s); });
 const themeBtn = $("#themeToggle");
 const syncTheme = () => themeBtn.setAttribute("aria-label", document.documentElement.dataset.theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
 syncTheme();
