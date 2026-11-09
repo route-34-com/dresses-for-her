@@ -539,3 +539,14 @@ html { scroll-behavior: auto; }
 @media (max-width: 900px) { .nav { height: 64px; grid-template-columns: minmax(0, 1fr) auto; padding: 0 12px; } .nav__links { display: none; } }
 .nav__links { justify-self: center; }
 @media (min-width: 1181px) and (max-width: 1500px) { .nav__search { width: 170px; } .nav__links { gap: 2rem; } }
+
+:root { --sb-thumb: rgba(7, 27, 26, .14); --sb-thumb-hover: rgba(7, 27, 26, .26); }
+:root[data-theme="dark"] { --sb-thumb: rgba(243, 236, 226, .14); --sb-thumb-hover: rgba(243, 236, 226, .26); }
+* { scrollbar-width: thin; scrollbar-color: var(--sb-thumb) transparent; }
+*:hover { scrollbar-color: var(--sb-thumb-hover) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; background: transparent; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--sb-thumb); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--sb-thumb-hover); background-clip: padding-box; }
+::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+::-webkit-scrollbar-corner { background: transparent; }
