@@ -32,9 +32,12 @@ class PaintedWheel {
 
   layout() {
     const n = this.items.length;
-    const cw = innerWidth < 600 ? Math.round(innerWidth * 0.34) : Math.max(150, Math.min(310, innerWidth * 0.21));
+    const byWidth = innerWidth < 600 ? innerWidth * 0.34 : Math.max(150, Math.min(310, innerWidth * 0.21));
+    const cw = Math.round(Math.min(byWidth, (innerHeight * 0.4) / this.o.ratio));
+    const ch = cw * this.o.ratio;
     this.root.style.setProperty("--cw", cw + "px");
-    this.root.style.setProperty("--ch", cw * this.o.ratio + "px");
+    this.root.style.setProperty("--ch", ch + "px");
+    this.root.style.height = Math.round(ch * 1.62 + 40) + "px";
     this.R = Math.round(cw / 2 / Math.tan(Math.PI / n) + cw * 0.35);
     this.figs.forEach(({ f }, i) => { f.style.transform = `rotateY(${(i * 360) / n}deg) translateZ(${this.R}px)`; });
   }
