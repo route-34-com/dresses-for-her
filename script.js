@@ -1,8 +1,8 @@
 const LOOKS = ["maroon", "manjal", "cottoncandy", "rasagulla", "vaanam", "lavender", "comfy", "organza", "vintage",
   "hakoba", "silkmaxi", "oviyam", "banarasi", "chennur"];
-const FEEL = ["maroon", "rasagulla", "vaanam", "lavender", "vintage", "silkmaxi"];
+const FEEL = ["maroon", "manjal", "rasagulla", "cottoncandy", "vaanam", "lavender", "comfy", "vintage", "silkmaxi"];
 const WALL_REELS = ["floralmaxi", "organza", "rasagulla", "banarasi", "cottoncandy", "hakoba"];
-const DROP = PRODUCTS.filter((p) => !p.sold);
+const DROP = ["maroon", "rasagulla", "vaanam", "lavender", "organza", "comfy", "vintage", "jamdani", "hakoba", "summer", "linen", "silkmaxi"].map(byId);
 
 const hasGSAP = typeof window.gsap !== "undefined";
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -35,7 +35,7 @@ function splitChars(el) {
 }
 
 $("#grid").innerHTML = DROP.map(cardHTML).join("");
-$("#dropCount").textContent = `${DROP.length} pieces available now · ${PRODUCTS.length - DROP.length} more in the archive`;
+$("#dropCount").textContent = `Our 12 favourites right now · ${PRODUCTS.length} pieces in the full collection`;
 
 const lookWheel = new PaintedWheel($("#lookCarousel"), LOOKS.map((id) => ({ id, src: `${IMG}c/${id}-1.jpg`, alt: byIdName(id) })), {
   onPick: (it, fig) => {
