@@ -573,3 +573,5 @@ h1, h2, h3, .title { text-wrap: balance; }
 .col__pill { padding: .5rem 1rem; }
 @media (max-width: 600px) { .page-col { padding-top: 84px; } }
 @media (max-width: 600px) { .col__pills { flex-wrap: nowrap; overflow-x: auto; margin: 0 -16px; padding: 0 16px; scrollbar-width: none; } .col__pills::-webkit-scrollbar { display: none; } .col__pill { flex: none; } .col__bar { gap: .7rem; } }
+.wordmark:has(.char) { background: none; }
+.wordmark .char { will-change: auto; -webkit-text-fill-color: transparent; }
