@@ -11,33 +11,36 @@
 
 👗 A video-led, scroll-animated storefront for **Wardrobe by She**, an Instagram-first women's ethnic wear label from **Tamil Nadu** selling kurthi sets, maxis and co-ord sets.
 
-Real try-on reels play in the hero, a scroll-scrubbed video lets visitors "twirl" an outfit frame by frame, and every product opens in a full quick view with its own video before going into a bag that sends the order straight to Instagram DM.
+Every product, name, fabric and reel on the site comes from the brand's own Instagram posts. Real try-on reels play in the hero, a scroll-scrubbed reel lets visitors "twirl" an outfit frame by frame, and every product opens in a quick view with its reel and photo gallery before going into a bag or enquiry that is sent straight to Instagram DM.
 
    🎬 **GSAP + ScrollTrigger + Flip** drive the scroll scenes, reveals, filters and quick-view transitions
 
    🧈 **Lenis** provides buttery smooth scrolling across the whole page
 
-   🎠 A custom **3D cylinder carousel** powers the lookbook (drag, tap-to-pause, momentum and snap)
+   🎠 A slow-turning **3D lookbook wheel**, an **accordion of looks** and a **drifting wall** of reels and photos
 
    ⚡ No build step — plain HTML, CSS and JavaScript, deployed as a static site on **Vercel**
 
-> **Note:** Product names, prices and descriptions are **placeholder content** written from the brand's Instagram photos. Confirm them with the client before going live.
+> **Content source:** product names, fabrics, sizes, customisation notes, sold-out status, the size chart and the order terms are taken from the brand's Instagram captions and highlights (posts up to 28 Oct 2026). **Prices are intentionally not shown** — visitors ask for them in DM, the way the brand sells today.
 
 ## Features
 
 - **Logo preloader** in the brand's deep green and gold, gone in about 1.5 seconds
-- **Floating header bar** with logo, section links, light / dark switch and bag
+- **Floating header bar** with logo, section links, search, favourites, light / dark switch and bag
 - **Light / dark mode** switch in the header (remembers the visitor's choice)
-- **Hero** with three real try-on reels, staggered parallax and a split-line headline
-- **Why shop with us** strip: pan-India dispatch, made in Tamil Nadu, Instagram ordering, XS–XXL sizes
-- **Scroll to twirl** — the page pins and scroll scrubs a reel frame by frame, with fabric callouts
-- **Shop** of 20 products filterable by **Kurthi sets / Maxis / Co-ords** with smooth Flip re-layout
-- **Quick view** that morphs out of the product card, plays the try-on video and picks a size
+- **Hero** with the three best try-on reels, crossfaded at each loop so they never jump, staggered parallax and a split-line headline
+- **Why shop with us** strip: free shipping in Tamil Nadu, Instagram ordering, sizes XXXS–XXXL, customisation
+- **Scroll to twirl** — the page pins and scroll-scrubs the Vaanam reel frame by frame, with its real fabric callouts
+- **The drop** — the pieces currently available, filterable by **Kurthi sets / Maxis / Co-ords** with smooth Flip re-layout. Photos are cropped around the model so heads line up; hovering swaps to the next photo and zooms in where the cursor points
+- **Quick view** that morphs out of the product card, with the product's reel, a photo gallery, fabric, sizes, customisation and a link to the original post
 - **Bag** drawer with quantity controls; remembers items between visits
-- **Order via Instagram DM** — the bag is copied as a ready-to-paste message and the brand's DM opens
-- **3D lookbook carousel** — auto-spins, tap to pause, tap again to play, drag with momentum
+- **Order via Instagram DM** — the bag is copied as a ready-to-paste message asking for price and sizes, and the brand's DM opens
+- **One girl, six looks** accordion with the faces lined up across every panel
+- **3D lookbook wheel** — turns slowly, drag or swipe sideways to spin, tap a look to open it
+- **Collections page** (`collections.html`) — all 26 pieces with category tabs, filters (available, new, with reel, sold out), search by name or fabric, favourites saved in the browser, and an enquiry sent to Instagram DM
+- **Size guide and terms** — the brand's size chart and order terms (prepaid, shipping, dispatch time, exchanges)
 - **Ordering is easy** section with the studio sewing clip and a four-step how-to-order guide
-- Count-up stats, Instagram grid linking to the real posts, gold wordmark footer
+- Count-up stats, a drifting Instagram wall of reels and photos, gold wordmark footer
 - Fully responsive with 2-column shop on phones, respects `prefers-reduced-motion`
 
 ## Live Site
@@ -124,40 +127,46 @@ git push
 
 Vercel picks up the push and deploys it within a minute. `vercel.json` sets caching and security headers; there is no build step.
 
-> **Cache busting:** `styles.css`, `script.js` and `carousel.js` are cached for a year. After editing any of them, bump the `?v=` number on its `<link>` / `<script>` tag in `index.html` so visitors get the new file.
+> **Cache busting:** the CSS and JS files are cached for a year. After editing any of them, bump the `?v=` number on every `<link>` / `<script>` tag in `index.html` and `collections.html` so visitors get the new files.
 
 ## Customizing the Site
 
 | What to change | Where |
 |---|---|
-| Products — names, prices, categories, descriptions, tags, videos | `PRODUCTS` array at the top of `script.js` |
+| Products — names, categories, fabric, sizes, descriptions, sold-out status, reels | `PRODUCTS` array at the top of `data.js` (shared by both pages) |
 | Lookbook carousel photos | `LOOKS` array in `script.js` |
-| Instagram grid photos and post links | `POSTS` array in `script.js` |
-| Carousel speed, size, tilt, pause behaviour | options passed to `new CircularCarousel(...)` in `script.js` |
-| Headline, tagline, why-shop strip, order steps, stats, footer links | `index.html` |
+| Accordion looks | `FEEL` array in `script.js`; face-aligned crops in `assets/img/feel/` |
+| Drifting wall reels | `WALL_REELS` in `script.js` |
+| Wheel speed and tilt | options passed to `new PaintedWheel(...)` in `script.js` |
+| Headline, tagline, why-shop strip, order steps, stats, size chart, terms, footer links | `index.html` |
 | Colours (light and dark themes), fonts, spacing | CSS variables at the top and bottom of `styles.css` |
 | Logo and tab icon | `assets/logo.jpg`, `assets/favicon.png` |
-| Product photos | `assets/img/p/<product-id>-1.jpg` and `-2.jpg` (900 × 1200, 3:4) |
-| Videos | `assets/video/` (muted, 540p H.264, `faststart`) |
+| Product photos | `assets/img/p/<product-id>-<n>.jpg` (up to 1080 px wide), plus a model-centred 3:4 crop of each in `assets/img/c/` used on cards |
+| Videos | product reels in `assets/video/r/<product-id>.mp4` with a `.jpg` poster (muted, 540p H.264, `faststart`) |
 
 ## Project Structure
 
 ```
-├── index.html          Page markup and sections
+├── index.html          Home page markup and sections
+├── collections.html    Collections page: tabs, search, favourites, enquiry
 ├── styles.css          All styles, light and dark themes
-├── script.js           Products, shop, quick view, bag, scroll animations
-├── carousel.js         3D cylinder lookbook carousel
+├── data.js             Products, favourites store, Instagram enquiry (shared)
+├── script.js           Home: shop, quick view, bag, accordion, wall, scroll animations
+├── collections.js      Collections page logic
+├── carousel.js         3D lookbook wheel
 ├── vercel.json         Vercel caching and security headers
 └── assets/
     ├── logo.jpg, favicon.png
     ├── img/p/          Product photos
-    └── video/          Hero, twirl, try-on and studio clips
+    ├── img/c/          Model-centred card crops
+    ├── img/feel/       Face-aligned accordion crops
+    └── video/          Twirl and studio clips; r/ holds one reel per product
 ```
 
 ## Troubleshooting
 
 - **Videos don't play or show a black box** — open the site through a local server (see *Running Locally*), not as a `file://` page.
-- **Changes don't show after deploying** — bump the `?v=` number for the edited CSS/JS file in `index.html`, then hard-refresh with `Ctrl + F5`.
+- **Changes don't show after deploying** — bump the `?v=` numbers in `index.html` and `collections.html`, then hard-refresh with `Ctrl + F5`.
 - **The twirl video doesn't move on iPhone** — tap the page once; iOS only allows video scrubbing after a user gesture.
 - **Animations feel off on a low-power device** — the site switches to a static version automatically when the device has *Reduce motion* turned on.
 

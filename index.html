@@ -11,12 +11,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Wardrobe by She — Step into effortless elegance" />
   <meta property="og:description" content="Kurthi sets, maxis &amp; co-ords for the desi girl. Made with love in Tamil Nadu." />
-  <meta property="og:image" content="assets/logo.jpg" />
+  <meta property="og:image" content="https://wardrobebyshe.route34solutions.com/assets/logo.jpg" />
+  <link rel="canonical" href="https://wardrobebyshe.route34solutions.com/" />
   <script>try { if (localStorage.getItem("wbs-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="stylesheet" href="styles.css?v=25" />
 </head>
 <body class="is-loading">
 
@@ -36,8 +37,11 @@
       <a href="#shop">Shop</a>
       <a href="#lookbook">Lookbook</a>
       <a href="#studio">Our Studio</a>
+      <a href="collections.html">Collections</a>
     </nav>
     <div class="nav__actions">
+      <a class="theme-toggle nav__ico" href="collections.html?open=search" aria-label="Search the collection"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg></a>
+      <a class="theme-toggle nav__ico" href="collections.html?open=favourites" aria-label="Favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.2-9.4C1.7 7.6 3.9 4.3 7.3 4.3c2 0 3.6 1.1 4.7 2.8 1.1-1.7 2.7-2.8 4.7-2.8 3.4 0 5.6 3.3 4.5 6.6-1.6 4.8-9.2 9.4-9.2 9.4z" /></svg><b data-fav-count hidden>0</b></a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
         <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" /></svg>
         <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
@@ -51,13 +55,13 @@
     <section class="hero" id="hero">
       <div class="hero__reels">
         <div class="reel reel--side" data-speed="-0.25">
-          <video src="assets/video/red.mp4" poster="assets/video/red.jpg" muted loop playsinline autoplay preload="metadata"></video>
+          <video src="assets/video/r/vintage.mp4" poster="assets/video/r/vintage.jpg" muted loop playsinline autoplay preload="metadata"></video>
         </div>
         <div class="reel reel--main" id="heroMain">
-          <video src="assets/video/twirl-loop.mp4" poster="assets/video/twirl-loop.jpg" muted loop playsinline autoplay preload="auto"></video>
+          <video src="assets/video/r/manjal.mp4" poster="assets/video/r/manjal.jpg" muted loop playsinline autoplay preload="auto"></video>
         </div>
         <div class="reel reel--side" data-speed="0.3">
-          <video src="assets/video/lilac.mp4" poster="assets/video/lilac.jpg" muted loop playsinline autoplay preload="metadata"></video>
+          <video src="assets/video/r/jamdani.mp4" poster="assets/video/r/jamdani.jpg" muted loop playsinline autoplay preload="metadata"></video>
         </div>
       </div>
       <div class="hero__shade"></div>
@@ -77,19 +81,19 @@
     <section class="usp" aria-label="Why shop with us">
       <div class="usp__item">
         <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" /><circle cx="7" cy="17.5" r="1.8" /><circle cx="17" cy="17.5" r="1.8" /></svg>
-        <div><h3>Pan-India dispatch</h3><p>Packed by hand, shipped to your door</p></div>
+        <div><h3>Free shipping in Tamil Nadu</h3><p>Shipping charges apply for other states</p></div>
       </div>
       <div class="usp__item">
         <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z" /></svg>
-        <div><h3>Made in Tamil Nadu</h3><p>Cut &amp; stitched by our own small team</p></div>
+        <div><h3>Made to suit you</h3><p>Customisation on many pieces, incl. feeding-friendly</p></div>
       </div>
       <div class="usp__item">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.3" cy="6.7" r=".6" /></svg>
-        <div><h3>Order on Instagram</h3><p>Add to bag, paste in our DM, done</p></div>
+        <div><h3>Order on Instagram</h3><p>Add to bag, paste in our DM. Prepaid only</p></div>
       </div>
       <div class="usp__item">
         <svg viewBox="0 0 24 24"><path d="M3 8h18v8H3zM7 8v3M11 8v4M15 8v3M19 8v4" /></svg>
-        <div><h3>Sizes XS to XXL</h3><p>Not sure of your fit? Just ask us</p></div>
+        <div><h3>Sizes XXXS to XXXL</h3><p>On most pieces — see the size chart below</p></div>
       </div>
     </section>
     </div>
@@ -101,9 +105,9 @@
           <video id="twirlVideo" src="assets/video/twirl-scrub.mp4" poster="assets/video/twirl-scrub.jpg" muted playsinline preload="auto"></video>
         </div>
         <div class="twirl__notes">
-          <p class="note note--1"><span>01</span>Breathable cotton kurtha, cut straight &amp; easy</p>
-          <p class="note note--2"><span>02</span>Kalamkari dupatta that catches every turn</p>
-          <p class="note note--3"><span>03</span>Matching pants with a relaxed, all-day fit</p>
+          <p class="note note--1"><span>01</span>Vaanam, in rich slub silk</p>
+          <p class="note note--2"><span>02</span>A hand-painted Pen Kalamkari dupatta</p>
+          <p class="note note--3"><span>03</span>Pure cotton lining for all-day comfort</p>
         </div>
         <div class="twirl__progress"><i id="twirlProgress"></i></div>
         <p class="twirl__hint">Scroll to twirl</p>
@@ -113,8 +117,9 @@
     <section class="shop" id="shop">
       <div class="shop__head">
         <div>
-          <p class="eyebrow">New in</p>
+          <p class="eyebrow">From our Instagram</p>
           <h2 class="title split-reveal">The <em>drop</em></h2>
+          <p class="shop__count"><span id="dropCount"></span> · <a href="collections.html">See everything</a></p>
         </div>
         <div class="filters" id="filters">
           <button class="filter is-active" data-filter="all">All</button>
@@ -127,6 +132,14 @@
       <div class="grid" id="grid"></div>
     </section>
 
+    <section class="feel" id="feel" aria-label="One girl, six looks">
+      <div class="feel__head">
+        <p class="eyebrow">The feel</p>
+        <h2 class="title split-reveal">One girl, <em>six looks</em></h2>
+      </div>
+      <div class="feel__row" id="feelRow"></div>
+    </section>
+
     <section class="lookbook" id="lookbook">
       <div class="lookbook__pin">
         <div class="lookbook__head">
@@ -134,7 +147,7 @@
           <h2 class="title split-reveal">Worn <em>in the wild</em></h2>
         </div>
         <div class="lookbook__carousel" id="lookCarousel"></div>
-        <p class="lookbook__hint">Tap to pause · tap again to play · drag to spin</p>
+        <p class="lookbook__hint">Drag to spin · tap a look to open it</p>
       </div>
     </section>
 
@@ -142,24 +155,59 @@
       <div class="studio__grid">
         <div class="studio__media" id="studioMedia">
           <video src="assets/video/studio.mp4" poster="assets/video/studio.jpg" muted loop playsinline autoplay preload="metadata"></video>
-          <span class="studio__badge">From our studio</span>
+          <span class="studio__badge">From our reels</span>
         </div>
         <div class="studio__copy">
           <p class="eyebrow eyebrow--gold">Made with love in Tamil Nadu</p>
           <h2 class="studio__title">Ordering is <em>easy.</em></h2>
-          <p class="studio__sub">Every piece is cut, stitched and checked by our own small team, then packed by hand and sent across India.</p>
+          <p class="studio__sub">Everything is ordered over Instagram DM. Pick what you love here and we’ll take it from there.</p>
           <ol class="steps">
             <li class="step"><b>01</b><div><h3>Pick your style</h3><p>Browse the drop and tap Quick view to see it on.</p></div></li>
-            <li class="step"><b>02</b><div><h3>Choose your size</h3><p>XS to XXL. Not sure? Check our size guide or ask us.</p></div></li>
-            <li class="step"><b>03</b><div><h3>Send it on Instagram</h3><p>Your bag is copied for you — just paste it in our DM.</p></div></li>
-            <li class="step"><b>04</b><div><h3>Dispatched to your door</h3><p>Packed by hand and shipped anywhere in India.</p></div></li>
+            <li class="step"><b>02</b><div><h3>Check your size</h3><p>Most pieces come in XXXS to XXXL — see the size chart, or ask us.</p></div></li>
+            <li class="step"><b>03</b><div><h3>Send it on Instagram</h3><p>Your bag is copied for you — paste it in our DM and we’ll reply with price and availability. Orders are prepaid.</p></div></li>
+            <li class="step"><b>04</b><div><h3>We dispatch it</h3><p>Within 5–7 working days. Free shipping within Tamil Nadu.</p></div></li>
           </ol>
         </div>
       </div>
       <div class="stats">
-        <div class="stat"><b data-count="17" data-suffix="K+">0</b><span>Girls in the family</span></div>
-        <div class="stat"><b data-count="320" data-suffix="+">0</b><span>Styles dropped</span></div>
-        <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Made in Tamil Nadu</span></div>
+        <div class="stat"><b data-count="17" data-suffix="K+">0</b><span>Followers on Instagram</span></div>
+        <div class="stat"><b data-count="300" data-suffix="+">0</b><span>Posts &amp; reels</span></div>
+        <div class="stat"><b data-count="3" data-suffix="">0</b><span>Kurthis · Maxis · Co-ords</span></div>
+      </div>
+    </section>
+
+    <section class="info" id="size">
+      <div class="info__grid">
+        <div>
+          <p class="eyebrow">Size guide</p>
+          <h2 class="title split-reveal">Find your <em>fit</em></h2>
+          <div class="chart" role="region" aria-label="Size chart" tabindex="0">
+            <table>
+              <thead><tr><th>Size</th><th>Chest</th><th>Waist</th><th>Hip</th><th>Shoulders</th><th>Length</th></tr></thead>
+              <tbody>
+                <tr><th>XS</th><td>32</td><td>28</td><td>34</td><td>13.5</td><td>43</td></tr>
+                <tr><th>S</th><td>34</td><td>30</td><td>36</td><td>14</td><td>44</td></tr>
+                <tr><th>M</th><td>36</td><td>32</td><td>38</td><td>14.5</td><td>44</td></tr>
+                <tr><th>L</th><td>38</td><td>34</td><td>40</td><td>15</td><td>44</td></tr>
+                <tr><th>XL</th><td>40</td><td>36</td><td>42</td><td>15.5</td><td>45</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="info__note">Body measurements from the Size Guide on our Instagram. Most pieces now come in XXXS to XXXL — ask us in DM for sizes outside this chart.</p>
+        </div>
+        <div id="terms">
+          <p class="eyebrow">Good to know</p>
+          <h2 class="title split-reveal">Before you <em>order</em></h2>
+          <ul class="terms">
+            <li>Orders are placed by DM on Instagram</li>
+            <li>Prepaid orders only — no cash on delivery</li>
+            <li>Free shipping within Tamil Nadu; shipping charges apply for other states</li>
+            <li>Orders are dispatched in 5–7 working days</li>
+            <li>No returns or exchanges. If a piece has a defect, we exchange it with a clear video proof</li>
+            <li>Many pieces can be customised — feeding-friendly, neck and sleeves. Just ask</li>
+            <li>We also take bulk orders for brands — message us to work together</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -168,16 +216,16 @@
         <h2 class="title split-reveal">Join us <em>@_wardrobe.by.she_</em></h2>
         <a class="btn btn--dark" href="https://www.instagram.com/_wardrobe.by.she_/" target="_blank" rel="noopener"><span>Follow on Instagram</span></a>
       </div>
-      <div class="insta__grid" id="instaGrid"></div>
+      <div class="wall" id="wall" aria-label="Reels and looks from our Instagram"></div>
     </section>
 
   </main>
 
   <footer class="footer">
     <div class="footer__cols">
-      <div><h4>Shop</h4><a href="#shop">Kurthi sets</a><a href="#shop">Maxis</a><a href="#shop">Co-ord sets</a></div>
-      <div><h4>Help</h4><a href="https://www.instagram.com/_wardrobe.by.she_/" target="_blank" rel="noopener">Size guide</a><a href="https://www.instagram.com/_wardrobe.by.she_/" target="_blank" rel="noopener">Dispatch</a><a href="https://www.instagram.com/_wardrobe.by.she_/" target="_blank" rel="noopener">T&amp;C</a></div>
-      <div><h4>Order</h4><p>DM us on Instagram<br />Pan-India dispatch</p></div>
+      <div><h4>Shop</h4><a href="collections.html#kurthi">Kurthi sets</a><a href="collections.html#maxi">Maxis</a><a href="collections.html#coord">Co-ord sets</a><a href="collections.html?open=favourites">Favourites</a></div>
+      <div><h4>Help</h4><a href="#size">Size guide</a><a href="#terms">Shipping &amp; dispatch</a><a href="#terms">Terms</a></div>
+      <div><h4>Order</h4><p>DM us on Instagram<br />Prepaid · no COD</p></div>
       <div><h4>Follow</h4><a href="https://www.instagram.com/_wardrobe.by.she_/" target="_blank" rel="noopener">Instagram</a></div>
     </div>
     <div class="footer__brand"><img class="footer__mark" src="assets/logo.jpg" alt="Wardrobe by She logo" /><div class="footer__mega wordmark" id="footerMega">Wardrobe by She</div><p class="footer__tag">Step into effortless elegance</p></div>
@@ -192,11 +240,13 @@
         <button class="qv__close" data-qv-close aria-label="Close">✕</button>
         <p class="eyebrow" id="qvCat"></p>
         <h3 class="qv__name" id="qvName"></h3>
-        <p class="qv__price" id="qvPrice"></p>
-        <p class="qv__desc" id="qvDesc"></p>
-        <p class="qv__label">Size</p>
-        <div class="sizes" id="qvSizes"></div>
-        <button class="btn btn--dark btn--block" id="qvAdd"><span>Add to bag</span></button>
+        <div id="qvThumbs"></div>
+        <div class="qv__body" id="qvBody"></div>
+        <div class="qv__actions">
+          <button class="btn btn--dark" id="qvAdd"><span>Add to bag</span></button>
+          <button class="btn btn--dark" id="qvAsk" hidden><span>Ask about a restock</span></button>
+          <button class="fav-btn" id="qvFav" type="button" aria-pressed="false" aria-label="Save to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.2-9.4C1.7 7.6 3.9 4.3 7.3 4.3c2 0 3.6 1.1 4.7 2.8 1.1-1.7 2.7-2.8 4.7-2.8 3.4 0 5.6 3.3 4.5 6.6-1.6 4.8-9.2 9.4-9.2 9.4z" /></svg></button>
+        </div>
       </div>
     </div>
   </div>
@@ -207,9 +257,8 @@
       <div class="bag__head"><h3>Your bag</h3><button class="bag__close" data-bag-close aria-label="Close">✕</button></div>
       <ul class="bag__items" id="bagItems"></ul>
       <div class="bag__foot">
-        <div class="bag__total"><span>Subtotal</span><b id="bagTotal">₹0</b></div>
-        <button class="btn btn--gold btn--block" id="sendOrder"><span>Order via Instagram DM</span></button>
-        <p class="bag__note">We copy your order — just paste it in our DM.</p>
+        <button class="btn btn--gold btn--block" id="sendOrder"><span>Ask on Instagram DM</span></button>
+        <p class="bag__note">We copy your list — paste it in our DM and we’ll reply with price and sizes.</p>
       </div>
     </div>
   </aside>
@@ -220,7 +269,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="carousel.js?v=16"></script>
-  <script src="script.js?v=16"></script>
+  <script src="data.js?v=25"></script>
+  <script src="carousel.js?v=25"></script>
+  <script src="script.js?v=25"></script>
 </body>
 </html>

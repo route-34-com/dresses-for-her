@@ -1,71 +1,9 @@
-const IG = "https://www.instagram.com/_wardrobe.by.she_/";
-const IMG = "assets/img/";
-const VID = "assets/video/";
+const LOOKS = ["maroon", "manjal", "cottoncandy", "rasagulla", "vaanam", "lavender", "comfy", "organza", "vintage",
+  "hakoba", "silkmaxi", "oviyam", "banarasi", "chennur"];
+const FEEL = ["maroon", "rasagulla", "vaanam", "lavender", "vintage", "silkmaxi"];
+const WALL_REELS = ["floralmaxi", "organza", "rasagulla", "banarasi", "cottoncandy", "hakoba"];
+const DROP = PRODUCTS.filter((p) => !p.sold);
 
-const P = (id, n = 2) => Array.from({ length: n }, (_, i) => `p/${id}-${i + 1}.jpg`);
-
-const PRODUCTS = [
-  { id: "indigo", name: "Indigo Kalamkari Set", cat: "kurthi", price: 1799, tag: "Bestseller", imgs: P("indigo"), video: "twirl-loop",
-    desc: "Blue checked cotton kurtha with a sweetheart neck, straight pants and a hand-painted kalamkari dupatta." },
-  { id: "lilac", name: "Lilac Bagru Set", cat: "kurthi", price: 1699, tag: "New", imgs: P("lilac"), video: "lilac",
-    desc: "Soft lilac block-printed kurtha with a keyhole neck, white pants and a sheer printed dupatta." },
-  { id: "polka", name: "Polka Ajrakh Maxi", cat: "maxi", price: 1499, tag: "New", imgs: P("polka"), video: "maxi",
-    desc: "Black flared maxi with a mustard polka yoke, puff sleeves and an ajrakh-striped hem." },
-  { id: "rani", name: "Rani Pink Silk Set", cat: "kurthi", price: 2199, tag: "Festive", imgs: P("rani"),
-    desc: "Rani pink silk-blend kurtha with woven motifs and a matching zari-border dupatta." },
-  { id: "zari", name: "Zari Buti Anarkali", cat: "maxi", price: 2499, tag: "2 colours", imgs: P("zari"),
-    desc: "Floor-sweeping anarkali with all-over zari buti and contrast cuffs. Shown in fuchsia and royal blue." },
-  { id: "berry", name: "Berry Kalamkari Set", cat: "kurthi", price: 1899, imgs: P("berry"),
-    desc: "Berry straight kurtha and pants paired with a cream kalamkari dupatta." },
-  { id: "aqua", name: "Aqua Banarasi Set", cat: "kurthi", price: 2099, imgs: P("aqua"),
-    desc: "Aqua buti kurtha with a peach banarasi dupatta — wedding-guest ready." },
-  { id: "mango", name: "Mango Silk Set", cat: "kurthi", price: 1999, imgs: P("mango"),
-    desc: "Mustard woven kurtha with a glowing orange silk dupatta." },
-  { id: "midnight", name: "Midnight Check Maxi", cat: "maxi", price: 1599, imgs: P("midnight"),
-    desc: "Navy checked maxi with a scalloped red yoke and a woven border hem." },
-  { id: "poppy", name: "Poppy Tiered Maxi", cat: "maxi", price: 1449, tag: "New", imgs: P("poppy"),
-    desc: "Red floral tiered maxi with flutter sleeves. Light, breezy and twirl-friendly." },
-  { id: "sunset", name: "Sunset Stripe Co-ord", cat: "coord", price: 1299, tag: "Co-ord", imgs: P("sunset"),
-    desc: "Handloom-stripe ruffle top with matching pants. Wear together or style apart." },
-  { id: "wine", name: "Wine Kalamkari Anarkali", cat: "kurthi", price: 2299, imgs: P("wine"),
-    desc: "Wine anarkali with a printed yoke and a bold mustard-maroon kalamkari dupatta." },
-  { id: "coral", name: "Coral Brocade Set", cat: "kurthi", price: 2399, tag: "Festive", imgs: P("coral"),
-    desc: "Coral printed kurtha with a rich red-gold brocade dupatta." },
-  { id: "ivory", name: "Ivory Sanganeri Set", cat: "kurthi", price: 1599, imgs: P("ivory"),
-    desc: "Cream sanganeri block-print kurtha, pants and a soft mul dupatta." },
-  { id: "steel", name: "Steel Blue Buti Set", cat: "kurthi", price: 1399, imgs: P("steel"),
-    desc: "A-line blue kurtha with yellow buti, three-quarter sleeves and matching pants." },
-  { id: "charcoal", name: "Charcoal Anarkali Set", cat: "kurthi", price: 1899, imgs: P("charcoal"),
-    desc: "Charcoal flared anarkali with a red woven hem and contrast pants." },
-  { id: "pastel", name: "Ivory Hand-Painted Set", cat: "kurthi", price: 2199, imgs: P("pastel"),
-    desc: "Ivory kurtha with bell sleeves and a hand-painted floral dupatta." },
-  { id: "candy", name: "Candy Pink Set", cat: "kurthi", price: 1699, imgs: P("candy"),
-    desc: "Candy pink silk-blend kurtha with a lime green contrast dupatta." },
-  { id: "blush", name: "Blush Mul Set", cat: "kurthi", price: 1499, imgs: P("blush"),
-    desc: "Blush pink mul kurtha with a lavender printed dupatta." },
-  { id: "noir", name: "Noir Straight Set", cat: "kurthi", price: 1599, imgs: P("noir", 1),
-    desc: "Black straight kurtha and pants with a printed monochrome dupatta." },
-];
-
-const LOOKS = ["zari", "indigo", "poppy", "aqua", "wine", "lilac", "midnight", "mango", "coral",
-  "polka", "berry", "sunset", "ivory", "rani", "pastel", "charcoal", "candy", "steel"]
-  .map((id) => [`p/${id}-1.jpg`, byIdName(id)]);
-
-const POSTS = [
-  ["p/zari-1.jpg", "p/DS18D2Bkt78"], ["p/poppy-1.jpg", "p/DPF_tlkkgOS"], ["p/aqua-1.jpg", "p/DUc9VWukvp0"],
-  ["p/wine-1.jpg", "p/DShX7_Wkt3i"], ["p/midnight-1.jpg", "p/DPlWadDEq9G"], ["p/mango-1.jpg", "p/DUX4K8RkhSg"],
-];
-
-function byIdName(id) { return PRODUCTS.find((p) => p.id === id).name; }
-
-const CAT_META = { kurthi: "Kurthi set · with dupatta", maxi: "Maxi dress", coord: "Co-ord set" };
-const CAT_LABEL = { kurthi: "Kurthi set", maxi: "Maxi dress", coord: "Co-ord set" };
-const SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
-
-const $ = (s, el = document) => el.querySelector(s);
-const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const inr = (n) => "₹" + n.toLocaleString("en-IN");
-const byId = (id) => PRODUCTS.find((p) => p.id === id);
 const hasGSAP = typeof window.gsap !== "undefined";
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const animate = hasGSAP && !reduce;
@@ -96,34 +34,90 @@ function splitChars(el) {
   return $$(".char", el);
 }
 
-$("#grid").innerHTML = PRODUCTS.map((p) => `
-  <article class="card" data-cat="${p.cat}" data-id="${p.id}">
-    <div class="card__media" data-flip-id="m-${p.id}"Play" : "View"}">
-      <div class="card__inner" style="position:absolute;inset:0">
-        <img class="card__img" src="${IMG + p.imgs[0]}" alt="${p.name}" loading="lazy"${p.pos ? ` style="object-position:${p.pos}"` : ""} />
-      </div>
-      ${p.tag ? `<span class="card__tag">${p.tag}</span>` : ""}
-      ${p.video ? `<span class="card__live">Video</span>` : ""}
-      <button class="card__quick">Quick view</button>
-    </div>
-    <div class="card__info">
-      <div><h3 class="card__name">${p.name}</h3><p class="card__meta">${CAT_META[p.cat]}</p></div>
-      <p class="card__price">${inr(p.price)}</p>
-    </div>
-  </article>`).join("");
+$("#grid").innerHTML = DROP.map(cardHTML).join("");
+$("#dropCount").textContent = `${DROP.length} pieces available now · ${PRODUCTS.length - DROP.length} more in the archive`;
 
-const lookCarousel = new CircularCarousel($("#lookCarousel"), LOOKS.map(([src, cap]) => ({ src: IMG + src, alt: cap })), {
-  preset: "cylinder", intro: "rise", cardWidth: 300, aspectRatio: 3 / 4, speed: 14, gap: 25, tilt: -5, curve: 1,
-  perspective: 2500, autoplay: reduce ? "none" : "drift", interval: 3, direction: "left", momentum: 0.6, snap: true,
-  pauseOnHover: false, focusOnClick: true, draggable: true, parallax: 0.06, stretch: 0.5,
-  fadeColor: "#0d1410", depthFade: 0.55, innerShade: 0.6, cornerRadius: 12,
+const lookWheel = new PaintedWheel($("#lookCarousel"), LOOKS.map((id) => ({ id, src: `${IMG}c/${id}-1.jpg`, alt: byIdName(id) })), {
+  onPick: (it, fig) => {
+    lookWheel.held = true;
+    openQuick(it.id, fig);
+  },
 });
 
-$("#instaGrid").innerHTML = POSTS.map(([src, path]) => `
-  <a href="${IG}${path}/" target="_blank" rel="noopener"><img src="${IMG + src}" alt="Instagram post" loading="lazy" /></a>`).join("");
+const feelRow = $("#feelRow");
+feelRow.innerHTML = FEEL.map((id, i) => `
+  <button class="feel__panel${i ? "" : " is-open"}" type="button" data-id="${id}" aria-expanded="${!i}" aria-label="${byIdName(id)}">
+    <img src="${IMG}feel/${id}.jpg" alt="" draggable="false" loading="lazy" />
+    <span class="feel__label">${byIdName(id)}<small>View the set</small></span>
+  </button>`).join("");
+const feelOpen = (panel) => $$(".feel__panel", feelRow).forEach((p) => {
+  p.classList.toggle("is-open", p === panel);
+  p.setAttribute("aria-expanded", p === panel);
+});
+feelRow.addEventListener("pointerover", (e) => {
+  const p = e.target.closest(".feel__panel");
+  if (p && e.pointerType === "mouse") feelOpen(p);
+});
+feelRow.addEventListener("focusin", (e) => feelOpen(e.target.closest(".feel__panel")));
+feelRow.addEventListener("click", (e) => {
+  const p = e.target.closest(".feel__panel");
+  if (!p) return;
+  if (!p.classList.contains("is-open")) return feelOpen(p);
+  openQuick(p.dataset.id, p);
+});
 
-$$(".card__media").forEach((m) => {
-  m.addEventListener("click", () => openQuick(m.closest(".card").dataset.id, m));
+const wall = $("#wall");
+const wallPics = PRODUCTS.flatMap((p) => p.imgs.slice(0, p.sold ? 1 : 2).map((src) => ({ src, id: p.id })));
+let wallCols = 0;
+let wallVideoIO = null;
+
+function wallTile(t, hidden) {
+  const tab = hidden ? ' tabindex="-1"' : "";
+  const media = t.reel
+    ? `<video src="${VID + t.reel}.mp4" poster="${VID + t.reel}.jpg" muted loop playsinline preload="none"></video><span class="wall__badge">▶ Reel</span>`
+    : `<img src="${cardSrc(t.src)}" alt="${hidden ? "" : esc(byIdName(t.id))}" loading="lazy" draggable="false" />`;
+  return `<button class="wall__tile${t.reel ? " wall__tile--reel" : ""}" type="button" data-id="${t.id}"${tab}>${media}<span class="wall__name">${esc(byIdName(t.id))}</span></button>`;
+}
+
+function buildWall() {
+  const n = innerWidth < 640 ? 3 : innerWidth < 1024 ? 4 : 6;
+  if (n === wallCols) return;
+  wallCols = n;
+  const cols = Array.from({ length: n }, () => []);
+  wallPics.forEach((t, i) => cols[i % n].push(t));
+  WALL_REELS.forEach((id, i) => cols[i % n].splice(1 + (i % 3), 0, { reel: byId(id).video, id }));
+  wall.innerHTML = cols.map((c, i) => `
+    <div class="wall__col" style="--dur:${48 + ((i * 13) % 26)}s">
+      <div class="wall__track${i % 2 ? " is-down" : ""}">
+        <div class="wall__set">${c.map((t) => wallTile(t, false)).join("")}</div>
+        <div class="wall__set" aria-hidden="true">${c.map((t) => wallTile(t, true)).join("")}</div>
+      </div>
+    </div>`).join("");
+  if (wallVideoIO) wallVideoIO.disconnect();
+  wallVideoIO = new IntersectionObserver((es) => es.forEach((e) => {
+    if (e.isIntersecting && !reduce) e.target.play().catch(() => {});
+    else e.target.pause();
+  }), { threshold: 0.15 });
+  $$("video", wall).forEach((v) => wallVideoIO.observe(v));
+}
+
+buildWall();
+addEventListener("resize", buildWall);
+new IntersectionObserver(([e]) => wall.classList.toggle("is-live", e.isIntersecting)).observe(wall);
+wall.addEventListener("click", (e) => {
+  const t = e.target.closest("button.wall__tile");
+  if (t) openQuick(t.dataset.id, t);
+});
+
+$("#grid").addEventListener("click", (e) => {
+  const f = e.target.closest("[data-fav]");
+  if (f) {
+    const on = favs.toggle(f.dataset.fav);
+    f.setAttribute("aria-pressed", on);
+    return toast(on ? "Saved to favourites" : "Removed from favourites");
+  }
+  const m = e.target.closest(".card__media");
+  if (m) openQuick(m.closest(".card").dataset.id, m);
 });
 
 let lenis = null;
@@ -136,20 +130,24 @@ let qvState = null;
 
 function openQuick(id, from) {
   const p = byId(id);
-  qvState = { id, from, size: "M" };
-  qvMedia.innerHTML = p.video
-    ? `<video src="${VID + p.video}.mp4" poster="${IMG + p.imgs[0]}" muted loop playsinline autoplay></video>`
-    : `<img src="${IMG + (p.imgs[1] || p.imgs[0])}" alt="${p.name}" />`;
-  qvMedia.dataset.flipId = from.dataset.flipId;
-  $("#qvCat").textContent = CAT_LABEL[p.cat];
+  qvState = { id, from, morph: from.classList.contains("card__media") };
+  $("#qvFav").setAttribute("aria-pressed", favs.has(id));
+  qvMedia.innerHTML = "";
+  showMedia(qvMedia, p);
+  qvMedia.dataset.flipId = from.dataset.flipId || "";
+  $("#qvCat").textContent = tagOf(p) ? `${CAT_LABEL[p.cat]} · ${tagOf(p)}` : CAT_LABEL[p.cat];
   $("#qvName").textContent = p.name;
-  $("#qvPrice").textContent = inr(p.price);
-  $("#qvDesc").textContent = p.desc;
-  $("#qvSizes").innerHTML = SIZES.map((s) => `<button class="size${s === "M" ? " is-active" : ""}" data-size="${s}">${s}</button>`).join("");
+  $("#qvThumbs").innerHTML = thumbsHTML(p);
+  $("#qvBody").innerHTML = detailsHTML(p);
+  $("#qvAdd").hidden = !!p.sold;
+  $("#qvAsk").hidden = !p.sold;
   pauseScroll();
   qv.setAttribute("aria-hidden", "false");
 
-  if (!animate) return qv.classList.add("is-open");
+  if (!animate) {
+    qv.classList.add("is-open", "is-static");
+    return;
+  }
   const state = Flip.getState(from);
   qv.classList.add("is-open");
   from.style.visibility = "hidden";
@@ -162,17 +160,25 @@ function openQuick(id, from) {
 
 function closeQuick() {
   if (!qvState) return;
-  const { from } = qvState;
+  const { from, morph } = qvState;
   qvState = null;
   const done = () => {
-    qv.classList.remove("is-open");
+    qv.classList.remove("is-open", "is-static");
     qv.setAttribute("aria-hidden", "true");
     qvMedia.innerHTML = "";
     from.style.visibility = "";
-    gsap.set([".qv__info > *", ".qv__panel", qvMedia], { clearProps: "all" });
+    lookWheel.held = false;
+    if (hasGSAP) gsap.set([".qv__info > *", ".qv__panel", qvMedia], { clearProps: "all" });
     resumeScroll();
   };
   if (!animate) return done();
+  if (!morph) {
+    from.style.visibility = "";
+    return gsap.timeline({ onComplete: done })
+      .to(".qv__info > *", { opacity: 0, y: 20, duration: 0.3, stagger: 0.02 }, 0)
+      .to([qvMedia, ".qv__panel"], { opacity: 0, scale: 0.96, duration: 0.5, ease: "power2.in" }, 0.1)
+      .to(".qv__bg", { opacity: 0, duration: 0.6 }, 0.2);
+  }
   const state = Flip.getState(qvMedia);
   gsap.timeline({ onComplete: done })
     .to(".qv__info > *", { opacity: 0, y: 20, duration: 0.3, stagger: 0.02 }, 0)
@@ -187,16 +193,26 @@ function closeQuick() {
 }
 
 $$("[data-qv-close]").forEach((el) => el.addEventListener("click", closeQuick));
-$("#qvSizes").addEventListener("click", (e) => {
-  const b = e.target.closest(".size");
-  if (!b || !qvState) return;
-  qvState.size = b.dataset.size;
-  $$(".size").forEach((s) => s.classList.toggle("is-active", s === b));
+$("#qvFav").addEventListener("click", (e) => {
+  if (!qvState) return;
+  const on = favs.toggle(qvState.id);
+  e.currentTarget.setAttribute("aria-pressed", on);
+  $$(`[data-fav="${qvState.id}"]`).forEach((b) => b.setAttribute("aria-pressed", on));
+  toast(on ? "Saved to favourites" : "Removed from favourites");
 });
+syncFavCount();
+bindThumbs($("#qvThumbs"), qvMedia, () => qvState && byId(qvState.id));
+
+$("#qvAsk").addEventListener("click", () => {
+  if (!qvState) return;
+  const p = byId(qvState.id);
+  enquireOnInstagram(`Hi Wardrobe by She! The ${p.name} is sold out — will it be restocked?\nMy size: `, toast);
+});
+
 $("#qvAdd").addEventListener("click", () => {
   if (!qvState) return;
-  const { id, size } = qvState;
-  flyToBag(qvMedia, byId(id).imgs[0], () => addToBag(id, size));
+  const { id } = qvState;
+  flyToBag(qvMedia, byId(id).imgs[0], () => addToBag(id));
   setTimeout(closeQuick, 250);
 });
 
@@ -209,29 +225,28 @@ const bag = $("#bag");
 
 function renderBag() {
   $("#bagCount").textContent = bagItems.reduce((n, i) => n + i.qty, 0);
-  $("#bagTotal").textContent = inr(bagItems.reduce((n, i) => n + i.qty * byId(i.id).price, 0));
   $("#bagItems").innerHTML = bagItems.length
     ? bagItems.map((i, k) => {
         const p = byId(i.id);
         return `<li class="line">
-          <img src="${IMG + p.imgs[0]}" alt="" />
-          <div><p class="line__name">${p.name}</p><p class="line__meta">Size ${i.size}</p>
+          <img src="${IMG + p.imgs[0].replace("p/", "c/")}" alt="" />
+          <div><p class="line__name">${p.name}</p><p class="line__meta">${CAT_LABEL[p.cat]}</p>
             <div class="line__qty"><button data-dec="${k}" aria-label="Decrease">−</button>${i.qty}<button data-inc="${k}" aria-label="Increase">+</button></div></div>
-          <p class="line__price">${inr(p.price * i.qty)}</p></li>`;
+          </li>`;
       }).join("")
     : `<li class="bag__empty">Your bag is empty —<br/>go find your twirl.</li>`;
   store.set(bagItems);
 }
 
-function addToBag(id, size) {
-  const hit = bagItems.find((i) => i.id === id && i.size === size);
-  hit ? hit.qty++ : bagItems.push({ id, size, qty: 1 });
+function addToBag(id) {
+  const hit = bagItems.find((i) => i.id === id);
+  hit ? hit.qty++ : bagItems.push({ id, qty: 1 });
   renderBag();
   const b = $("#bagCount");
   b.classList.remove("bump");
   void b.offsetWidth;
   b.classList.add("bump");
-  toast(`${byId(id).name} (${size}) added to bag`);
+  toast(`${byId(id).name} added to bag`);
 }
 
 function flyToBag(fromEl, img, done) {
@@ -267,11 +282,8 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeBag
 
 $("#sendOrder").addEventListener("click", async () => {
   if (!bagItems.length) return toast("Your bag is empty");
-  const lines = bagItems.map((i) => `• ${byId(i.id).name} — Size ${i.size} × ${i.qty}`);
-  const total = bagItems.reduce((n, i) => n + i.qty * byId(i.id).price, 0);
-  const msg = `Hi Wardrobe by She! I'd like to order:\n${lines.join("\n")}\nTotal: ${inr(total)}`;
-  try { await navigator.clipboard.writeText(msg); toast("Order copied — paste it in our DM"); } catch { toast("Opening Instagram DM…"); }
-  window.open("https://ig.me/m/_wardrobe.by.she_", "_blank", "noopener");
+  const lines = bagItems.map((i) => `• ${byId(i.id).name} × ${i.qty}`);
+  enquireOnInstagram(`Hi Wardrobe by She! I'd like to order:\n${lines.join("\n")}\n\nCould you share the price and available sizes?\nMy size: `, toast);
 });
 
 let toastTimer;
@@ -325,6 +337,38 @@ movePill($(".filter.is-active"));
 document.fonts && document.fonts.ready.then(() => movePill($(".filter.is-active")));
 addEventListener("resize", () => movePill($(".filter.is-active")));
 renderBag();
+
+function smoothLoop(slot, fade = 1.1) {
+  const a = $("video", slot);
+  a.removeAttribute("loop");
+  a.removeAttribute("autoplay");
+  const b = a.cloneNode();
+  b.preload = "auto";
+  b.classList.add("is-back");
+  slot.appendChild(b);
+  let cur = a;
+  let nxt = b;
+  let on = false;
+  let running = false;
+  const step = () => {
+    if (!on) { running = false; return; }
+    if (cur.duration && cur.currentTime >= cur.duration - fade && nxt.paused) {
+      nxt.currentTime = 0;
+      nxt.play().catch(() => {});
+      nxt.classList.remove("is-back");
+      cur.classList.add("is-back");
+      [cur, nxt] = [nxt, cur];
+    }
+    requestAnimationFrame(step);
+  };
+  new IntersectionObserver(([e]) => {
+    on = e.isIntersecting;
+    if (!on) return [a, b].forEach((v) => v.pause());
+    cur.play().catch(() => {});
+    if (!running) { running = true; requestAnimationFrame(step); }
+  }, { threshold: 0.05 }).observe(slot);
+}
+if (!reduce) $$(".hero .reel").forEach((r) => smoothLoop(r));
 
 const io = new IntersectionObserver((entries) => entries.forEach((e) => {
   const v = e.target;
@@ -392,7 +436,7 @@ function loader(onDone) {
 
 function intro() {
   gsap.timeline({ defaults: { ease: "expo.out" } })
-    .fromTo("#heroMain", { clipPath: `inset(50% 0% 50% 0% round ${innerWidth > 900 ? 18 : 0}px)` }, { clipPath: `inset(0% 0% 0% 0% round ${innerWidth > 900 ? 18 : 0}px)`, duration: 1.6, ease: "expo.inOut" }, 0)
+    .fromTo("#heroMain", { clipPath: `inset(50% 0% 50% 0% round ${innerWidth > 900 ? 8 : 0}px)` }, { clipPath: `inset(0% 0% 0% 0% round ${innerWidth > 900 ? 8 : 0}px)`, duration: 1.6, ease: "expo.inOut" }, 0)
     .fromTo("#heroMain video", { scale: 1.5 }, { scale: 1.12, duration: 2.2 }, 0)
     .from(".reel--side", { yPercent: (i) => (i ? -40 : 40), opacity: 0, duration: 1.8, stagger: 0.1 }, 0.35)
     .from(".hero__title .ln > *", { yPercent: 115, rotate: 4, duration: 1.4, stagger: 0.1 }, 0.5)
@@ -450,19 +494,19 @@ function scenes() {
     });
   });
 
-  gsap.set(".card__media", { clipPath: "inset(100% 0% 0% 0% round 16px)" });
+  gsap.set(".card__media", { clipPath: "inset(100% 0% 0% 0% round 8px)" });
   gsap.set(".card__inner", { scale: 1.4 });
   gsap.set(".card__info", { opacity: 0, y: 30 });
   ScrollTrigger.batch(".card", {
     start: "top 88%", once: true,
     onEnter: (els) => {
-      gsap.to(els.map((c) => $(".card__media", c)), { clipPath: "inset(0% 0% 0% 0% round 16px)", duration: 1.4, stagger: 0.12, ease: "expo.inOut" });
+      gsap.to(els.map((c) => $(".card__media", c)), { clipPath: "inset(0% 0% 0% 0% round 8px)", duration: 1.4, stagger: 0.12, ease: "expo.inOut" });
       gsap.to(els.map((c) => $(".card__inner", c)), { scale: 1, duration: 1.8, stagger: 0.12, ease: "expo.out" });
       gsap.to(els.map((c) => $(".card__info", c)), { opacity: 1, y: 0, duration: 1.2, stagger: 0.12, delay: 0.4, ease: "expo.out" });
     },
   });
 
-  gsap.from(".studio__media", { clipPath: "inset(100% 0% 0% 0% round 22px)", duration: 1.4, ease: "expo.inOut", scrollTrigger: { trigger: ".studio", start: "top 75%" } });
+  gsap.from(".studio__media", { clipPath: "inset(100% 0% 0% 0% round 8px)", duration: 1.4, ease: "expo.inOut", scrollTrigger: { trigger: ".studio", start: "top 75%" } });
   gsap.from(".studio__copy > *, .step", { y: 40, opacity: 0, duration: 1, stagger: 0.08, ease: "expo.out", scrollTrigger: { trigger: ".studio__copy", start: "top 80%" } });
 
   $$(".stat b").forEach((el) => {
@@ -474,9 +518,9 @@ function scenes() {
     });
   });
 
-  gsap.from(".insta__grid a", {
-    y: 120, opacity: 0, rotate: (i) => (i % 2 ? 4 : -4), duration: 1.4, stagger: 0.07, ease: "expo.out",
-    scrollTrigger: { trigger: ".insta__grid", start: "top 85%" },
+  gsap.from(".wall__col", {
+    y: (i) => (i % 2 ? -160 : 160), opacity: 0, duration: 1.6, stagger: 0.08, ease: "expo.out",
+    scrollTrigger: { trigger: ".wall", start: "top 85%" },
   });
 
   gsap.from(splitChars($("#footerMega")), {

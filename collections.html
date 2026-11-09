@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collections — Wardrobe by She</title>
+  <meta name="description" content="Browse every kurthi set, maxi and co-ord from Wardrobe by She. Search, save your favourites and enquire on Instagram." />
+  <meta name="theme-color" content="#071b1a" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Collections — Wardrobe by She" />
+  <meta property="og:description" content="Kurthi sets, maxis &amp; co-ords for the desi girl. Made with love in Tamil Nadu." />
+  <meta property="og:image" content="https://wardrobebyshe.route34solutions.com/assets/logo.jpg" />
+  <link rel="canonical" href="https://wardrobebyshe.route34solutions.com/collections.html" />
+  <script>try { if (localStorage.getItem("wbs-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=25" />
+</head>
+<body class="page-col">
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="Wardrobe by She — home"><img src="assets/logo.jpg" alt="" /><span class="wordmark">Wardrobe by She</span></a>
+    <nav class="nav__links">
+      <a href="index.html#twirl">The Twirl</a>
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#lookbook">Lookbook</a>
+      <a href="index.html#studio">Our Studio</a>
+      <a href="collections.html" aria-current="page">Collections</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="theme-toggle nav__ico" id="searchOpen" type="button" aria-label="Search the collection"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg></button>
+      <button class="theme-toggle nav__ico" id="favOpen" type="button" aria-label="Favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.2-9.4C1.7 7.6 3.9 4.3 7.3 4.3c2 0 3.6 1.1 4.7 2.8 1.1-1.7 2.7-2.8 4.7-2.8 3.4 0 5.6 3.3 4.5 6.6-1.6 4.8-9.2 9.4-9.2 9.4z" /></svg><b data-fav-count hidden>0</b></button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" /></svg>
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="col">
+    <div class="col__head">
+      <p class="eyebrow">Collections</p>
+      <h1 class="title" id="colTitle">The <em>wardrobe</em></h1>
+      <p class="col__line" id="colLine">Every set we make, in one place. Save the ones you love and ask us about them on Instagram.</p>
+    </div>
+
+    <div class="col__tabs" id="colTabs" role="tablist">
+      <button role="tab" data-cat="all" aria-selected="true">All</button>
+      <button role="tab" data-cat="kurthi" aria-selected="false">Kurthi sets</button>
+      <button role="tab" data-cat="maxi" aria-selected="false">Maxis</button>
+      <button role="tab" data-cat="coord" aria-selected="false">Co-ords</button>
+    </div>
+
+    <div class="col__bar">
+      <div class="col__pills" id="colPills">
+        <button class="col__pill is-active" data-pill="all">All</button>
+        <button class="col__pill" data-pill="available">Available now</button>
+        <button class="col__pill" data-pill="new">New in</button>
+        <button class="col__pill" data-pill="video">With reel</button>
+        <button class="col__pill" data-pill="sold">Sold out</button>
+      </div>
+      <p class="col__count" id="colCount"></p>
+    </div>
+
+    <div class="grid col__grid" id="colGrid"></div>
+    <p class="col__empty" id="colEmpty" hidden>Nothing here yet. Try another filter, or <button type="button" id="colReset">see everything</button>.</p>
+  </main>
+
+  <footer class="footer footer--slim">
+    <div class="footer__cols">
+      <div><h4>Shop</h4><a href="collections.html#kurthi">Kurthi sets</a><a href="collections.html#maxi">Maxis</a><a href="collections.html#coord">Co-ord sets</a></div>
+      <div><h4>Help</h4><a href="index.html#size">Size guide</a><a href="index.html#terms">Shipping &amp; dispatch</a><a href="index.html#terms">Terms</a></div>
+      <div><h4>Order</h4><p>DM us on Instagram<br />Prepaid · no COD</p></div>
+      <div><h4>Follow</h4><a href="https://www.instagram.com/_wardrobe.by.she_/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <p class="footer__copy">© 2026 Wardrobe by She · Made with love in Tamil Nadu</p>
+  </footer>
+
+  <div class="srch" id="srch" aria-hidden="true">
+    <div class="srch__bg" data-srch-close></div>
+    <div class="srch__panel" role="dialog" aria-label="Search the collection">
+      <div class="srch__bar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></svg>
+        <input id="srchIn" type="search" placeholder="Search by name, fabric or style…" autocomplete="off" aria-label="Search the collection" />
+        <button class="srch__x" type="button" data-srch-close aria-label="Close search">✕</button>
+      </div>
+      <p class="srch__hint" id="srchHint">Try “cotton”, “silk”, “kota doria” or “kalamkari”.</p>
+      <ul class="srch__list" id="srchList"></ul>
+    </div>
+  </div>
+
+  <aside class="bag favd" id="favd" aria-hidden="true">
+    <div class="bag__bg" data-fav-close></div>
+    <div class="bag__panel">
+      <div class="bag__head"><h3>Favourites</h3><button class="bag__close" data-fav-close aria-label="Close">✕</button></div>
+      <ul class="bag__items" id="favItems"></ul>
+      <div class="bag__foot">
+        <button class="btn btn--gold btn--block" id="favEnquire"><span>Enquire on Instagram</span></button>
+        <p class="bag__note">We copy your list — paste it in our DM and we’ll reply with price, sizes and availability.</p>
+      </div>
+    </div>
+  </aside>
+
+  <div class="qv pv" id="pv" aria-hidden="true">
+    <div class="qv__bg" data-pv-close></div>
+    <div class="qv__panel" role="dialog" aria-labelledby="pvName">
+      <div class="qv__media pv__media" id="pvMedia"></div>
+      <div class="qv__info">
+        <button class="qv__close" data-pv-close aria-label="Close">✕</button>
+        <p class="eyebrow" id="pvCat"></p>
+        <h3 class="qv__name" id="pvName"></h3>
+        <div id="pvThumbs"></div>
+        <div class="qv__body" id="pvBody"></div>
+        <div class="qv__actions">
+          <button class="btn btn--dark" id="pvEnquire"><span>Enquire on Instagram</span></button>
+          <button class="fav-btn" id="pvFav" type="button" aria-pressed="false" aria-label="Save to favourites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3s-7.6-4.6-9.2-9.4C1.7 7.6 3.9 4.3 7.3 4.3c2 0 3.6 1.1 4.7 2.8 1.1-1.7 2.7-2.8 4.7-2.8 3.4 0 5.6 3.3 4.5 6.6-1.6 4.8-9.2 9.4-9.2 9.4z" /></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js?v=25"></script>
+  <script src="collections.js?v=25"></script>
+</body>
+</html>
